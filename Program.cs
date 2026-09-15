@@ -42,14 +42,43 @@
 
         //Es 4
 
-        static int Lettura(int num)
+        static int Lettura()
         {
-            while (num < 0)
+            int cont = 0, num = -1;
+
+            while (num <= 0)
             {
                 num = int.Parse(Console.ReadLine()); 
+
+                cont++;
             }
+
+            return cont;
         }
 
+        //Es5
+
+        static void StampaCornice(string s)
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                if (i != 1)
+                {
+                    for (int j = 0; j < s.Length + 2; j++)
+                    {
+                        Console.Write("*");
+                        
+                    }
+
+                    Console.WriteLine();
+
+                }
+                else
+                {
+                    Console.WriteLine("*" + s + "*");
+                }
+            }
+        }
 
         static void Main(string[] args)
         {
@@ -98,7 +127,17 @@
 
             //Es4
 
-            Console.WriteLine("Inserisci un numero: ");
+            Console.Write("Inserisci un numero: ");
+
+            Console.WriteLine(Lettura());
+
+            Console.WriteLine("--------------------------");
+
+            //Es5
+
+            string fr = "ciao a tutti";
+
+            StampaCornice(fr);
 
         }
     }
